@@ -2,7 +2,7 @@
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
 
     <!-- Build information -->
     <groupId>net.bobnar.marketplace</groupId>
@@ -29,5 +29,33 @@
             <url>http://www.opensource.org/licenses/mit-license.php</url>
         </license>
     </licenses>
+
+    <dependencies>
+
+<!--        <dependency>-->
+<!--            <groupId>com.kumuluz.ee.openapi</groupId>-->
+<!--            <artifactId>kumuluzee-openapi-mp</artifactId>-->
+<!--            <scope>provided</scope>-->
+<!--        </dependency>-->
+
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20230227</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.eclipse.microprofile.openapi</groupId>
+            <artifactId>microprofile-openapi-api</artifactId>
+            <version>1.1.2</version>
+        </dependency>
+
+        <!--    <dependency>-->
+        <!--      <groupId>org.eclipse.microprofile.openapi</groupId>-->
+        <!--      <artifactId>microprofile-openapi-api</artifactId>-->
+        <!--      <version>3.1.1</version>-->
+        <!--&lt;!&ndash;      <scope>compile</scope>&ndash;&gt;-->
+        <!--    </dependency>-->
+    </dependencies>
 
 </project>
