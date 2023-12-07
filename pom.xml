@@ -5,15 +5,13 @@
     <packaging>jar</packaging>
 
     <!-- Build information -->
-    <groupId>net.bobnar.marketplace</groupId>
+    <groupId>net.bobnar.marketplace.common</groupId>
     <artifactId>marketplace-common</artifactId>
-    <version>${revision}</version>
+
+    <!-- Build version -->
+    <version>1.0.2</version>
 
     <properties>
-        <!-- Build version -->
-        <version>0.0.1</version>
-        <revision>${version}</revision>
-
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -32,16 +30,10 @@
 
     <dependencies>
 
-<!--        <dependency>-->
-<!--            <groupId>com.kumuluz.ee.openapi</groupId>-->
-<!--            <artifactId>kumuluzee-openapi-mp</artifactId>-->
-<!--            <scope>provided</scope>-->
-<!--        </dependency>-->
-
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
-            <version>20230227</version>
+            <version>20231013</version>
         </dependency>
 
         <dependency>
@@ -50,12 +42,6 @@
             <version>1.1.2</version>
         </dependency>
 
-        <!--    <dependency>-->
-        <!--      <groupId>org.eclipse.microprofile.openapi</groupId>-->
-        <!--      <artifactId>microprofile-openapi-api</artifactId>-->
-        <!--      <version>3.1.1</version>-->
-        <!--&lt;!&ndash;      <scope>compile</scope>&ndash;&gt;-->
-        <!--    </dependency>-->
     </dependencies>
 
 </project>

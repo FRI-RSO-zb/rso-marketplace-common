@@ -1,10 +1,10 @@
-package dtos.catalog.v1.info;
+package net.bobnar.marketplace.common.dtos.loaderAgent.v1.info;
 
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
 @Schema(description = "Information about the service instance.", example = """
             {
-              "name": "catalog",
+              "name": "loader-agent",
               "environment": "prod",
               "version": "1.2.3-main-abcdef1"
             }""")

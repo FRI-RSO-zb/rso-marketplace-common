@@ -1,6 +1,6 @@
-package dtos.loaderAgent.v1.info;
+package net.bobnar.marketplace.common.dtos.catalog.v1.info;
 
-import org.eclipse.microprofile.openapi.annotations.media.*;
+import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
 @Schema(description = "Version information about the service instance.",
         example = """

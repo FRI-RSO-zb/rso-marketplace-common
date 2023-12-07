@@ -1,4 +1,4 @@
-package dtos.catalog.v1.ads;
+package net.bobnar.marketplace.common.dtos.catalog.v1.ads;
 
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
 

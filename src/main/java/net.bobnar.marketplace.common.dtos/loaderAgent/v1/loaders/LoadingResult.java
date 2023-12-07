@@ -1,4 +1,4 @@
-package dtos.loaderAgent.v1.loaders;
+package net.bobnar.marketplace.common.dtos.loaderAgent.v1.loaders;
 
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
