@@ -1,9 +1,9 @@
 package net.bobnar.marketplace.common.dtos.catalog.v1.ads;
 
+import net.bobnar.marketplace.common.dtos.ItemBase;
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
 import java.io.Serializable;
-import java.util.Objects;
 
 @Schema(description = "Item containing the information about the ad.", example = """
         {
@@ -12,77 +12,69 @@ import java.util.Objects;
             "source": "internal"
         }
         """)
-public final class Ad implements Serializable {
-    private final Integer id;
-    private final String title;
-    private final String source;
-    private final Integer sellerId;
+public final class Ad implements Serializable, ItemBase {
+    private Integer id;
+    private String title;
+    private String source;
+    private Integer sellerId;
+    private Integer brandId;
+    private Integer modelId;
 
-    public Ad(
-            Integer id,
-            String title,
-            String source,
-            Integer sellerId) {
+    public Ad(Integer id, String title, String source, Integer sellerId, Integer brandId, Integer modelId) {
         this.id = id;
         this.title = title;
         this.source = source;
         this.sellerId = sellerId;
+        this.brandId = brandId;
+        this.modelId = modelId;
     }
 
-    public Integer id() {
-        return id;
-    }
-
-    public String title() {
-        return title;
-    }
-
-    public String source() {
-        return source;
-    }
-
-    public Integer sellerId() {
-        return sellerId;
-    }
-
+    @Override
     public Integer getId() {
         return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getTitle() {
         return title;
     }
 
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
     public String getSource() {
         return source;
+    }
+
+    public void setSource(String source) {
+        this.source = source;
     }
 
     public Integer getSellerId() {
         return sellerId;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == this) return true;
-        if (obj == null || obj.getClass() != this.getClass()) return false;
-        var that = (Ad) obj;
-        return Objects.equals(this.id, that.id) &&
-                Objects.equals(this.title, that.title) &&
-                Objects.equals(this.source, that.source) &&
-                Objects.equals(this.sellerId, that.sellerId);
+    public void setSellerId(Integer sellerId) {
+        this.sellerId = sellerId;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, title, source, sellerId);
+    public Integer getBrandId() {
+        return brandId;
     }
 
-    @Override
-    public String toString() {
-        return "Ad[" +
-                "id=" + id + ", " +
-                "title=" + title + ", " +
-                "source=" + source + ", " +
-                "sellerId=" + sellerId + ']';
+    public void setBrandId(Integer brandId) {
+        this.brandId = brandId;
+    }
+
+    public Integer getModelId() {
+        return modelId;
+    }
+
+    public void setModelId(Integer modelId) {
+        this.modelId = modelId;
     }
 }
