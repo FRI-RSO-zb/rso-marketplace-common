@@ -1,0 +1,15 @@
+syntax = "proto3";
+option java_package = "net.bobnar.marketplace.common.grpc.catalog";
+
+service Ads {
+    rpc getAd(AdRequest) returns (AdResponse) {};
+}
+
+message AdRequest {
+    int32 id = 1;
+}
+
+message AdResponse {
+    int32 id = 1;
+    string title = 2;
+}
