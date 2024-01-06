@@ -1,8 +1,8 @@
-package net.bobnar.marketplace.common.dtos.loaderAgent.v1.export;
+package net.bobnar.marketplace.common.dtos.loaderAgent.v1.pipelines;
 
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
-import java.util.Map;
+import java.util.Dictionary;
 
 @Schema(name = "ItemToExport (DRAFT)")
 public record ItemToExport(
@@ -14,5 +14,5 @@ public record ItemToExport(
         String price,
         String location,
         String seller,
-        Map<String, String> info
+        Dictionary<String, String> info
 ) {}

@@ -28,7 +28,7 @@ public final class Ad implements Serializable, ItemBase {
     private String otherData;
 
 
-    private Ad() {}
+    public Ad() {}
 
     public Ad(Integer id, String title, String source, String sourceId, String originalUri, String photoUri, Integer sellerId, Integer modelId, String otherData) {
         this.id = id;
