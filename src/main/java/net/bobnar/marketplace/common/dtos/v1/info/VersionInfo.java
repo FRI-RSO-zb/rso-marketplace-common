@@ -1,8 +1,8 @@
-package net.bobnar.marketplace.common.dtos.catalog.v1.info;
+package net.bobnar.marketplace.common.dtos.v1.info;
 
-import org.eclipse.microprofile.openapi.annotations.media.Schema;
+import org.eclipse.microprofile.openapi.annotations.media.*;
 
-@Schema(description = "Version information about the service instance.",
+@Schema(description = "Response with version information about the service instance.",
         example = """
                 {
                   "version": "1.2.3-main-abcdef1",

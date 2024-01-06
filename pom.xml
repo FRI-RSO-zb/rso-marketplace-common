@@ -9,7 +9,7 @@
     <artifactId>marketplace-common</artifactId>
 
     <!-- Build version -->
-    <version>1.0.2</version>
+    <version>1.1.0</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -45,6 +45,12 @@
             <version>1.1.2</version>
         </dependency>
         <dependency>
+            <groupId>jakarta.ws.rs</groupId>
+            <artifactId>jakarta.ws.rs-api</artifactId>
+            <version>2.1.6</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
             <groupId>com.kumuluz.ee.grpc</groupId>
             <artifactId>kumuluzee-grpc</artifactId>
             <version>${kumuluz-grpc.version}</version>
@@ -73,8 +79,6 @@
 <!--            <artifactId>jakarta.annotation-api</artifactId>-->
 <!--            <version>3.0.0-M1</version>-->
 <!--        </dependency>-->
-
-
 
     </dependencies>
 
