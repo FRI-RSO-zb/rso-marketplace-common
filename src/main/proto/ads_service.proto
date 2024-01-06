@@ -2,14 +2,37 @@ syntax = "proto3";
 option java_package = "net.bobnar.marketplace.common.grpc.catalog";
 
 service Ads {
-    rpc getAd(AdRequest) returns (AdResponse) {};
+    rpc getAds(AdsRequest) returns (AdsResponse) {};
+    rpc getSellers(SellersRequest) returns (SellersResponse) {};
 }
 
-message AdRequest {
-    int32 id = 1;
+message AdsRequest {
+    repeated int32 ids = 1;
+    repeated string sourceIds = 2;
 }
-
-message AdResponse {
+message AdsResponse {
+    repeated Ad items = 1;
+}
+message Ad {
     int32 id = 1;
     string title = 2;
+    string source = 3;
+    string sourceId = 4;
+    string sellerId = 5;
+    string modelId = 6;
+}
+
+message SellersRequest {
+    repeated int32 ids = 1;
+    repeated string sourceIds = 2;
+}
+message SellersResponse {
+    repeated Seller items = 1;
+}
+message Seller {
+    int32 id = 1;
+    string name = 2;
+    string location = 3;
+    string contact = 4;
+    string sourceId = 5;
 }

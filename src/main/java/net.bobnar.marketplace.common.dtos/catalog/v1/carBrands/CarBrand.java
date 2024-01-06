@@ -9,9 +9,9 @@ import java.util.Objects;
 @Schema(description = "Item containing the information about the car brand.", example = """
         {
             "id": 12,
-            "name": "Brand 1",
-            "primaryIdentifier": "brand-1"
-            "identifiers": "brand-1,brand-1-x"
+            "name": "Seat",
+            "primaryIdentifier": "seat"
+            "identifiers": "seat"
         }
         """)
 public final class CarBrand implements Serializable, ItemBase {
@@ -20,6 +20,8 @@ public final class CarBrand implements Serializable, ItemBase {
     private String primaryIdentifier;
     private String identifiers;
     private Long modelsCount;
+
+    private CarBrand() {}
 
     public CarBrand(
             Integer id,
@@ -55,7 +57,7 @@ public final class CarBrand implements Serializable, ItemBase {
     }
 
     public void setPrimaryIdentifier(String primaryIdentifier) {
-        this.primaryIdentifier = primaryIdentifier;
+        this.primaryIdentifier = primaryIdentifier.toLowerCase();
     }
 
     public String getIdentifiers() {
@@ -63,7 +65,7 @@ public final class CarBrand implements Serializable, ItemBase {
     }
 
     public void setIdentifiers(String identifiers) {
-        this.identifiers = identifiers;
+        this.identifiers = identifiers.toLowerCase();
     }
 
     public Long getModelsCount() {

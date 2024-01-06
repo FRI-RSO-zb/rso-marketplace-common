@@ -1,15 +1,27 @@
 package net.bobnar.marketplace.common.dtos.catalog.v1.carModels;
 
 import net.bobnar.marketplace.common.dtos.ItemBase;
+import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
 import java.util.Objects;
 
+@Schema(description = "Item containing the information about the car model.", example = """
+        {
+            "id": 12,
+            "name": "Leon",
+            "brandId": 12,
+            "primaryIdentifier": "leon",
+            "identifiers": "leon,seat-leon"
+        }
+        """)
 public final class CarModel implements ItemBase {
     private Integer id;
     private String name;
     private Integer brandId;
     private String primaryIdentifier;
     private String identifiers;
+
+    private CarModel() {}
 
     public CarModel(Integer id, String name, Integer brandId, String primaryIdentifier, String identifiers) {
         this.id = id;
@@ -48,7 +60,7 @@ public final class CarModel implements ItemBase {
     }
 
     public void setPrimaryIdentifier(String primaryIdentifier) {
-        this.primaryIdentifier = primaryIdentifier;
+        this.primaryIdentifier = primaryIdentifier.toLowerCase();
     }
 
     public String getIdentifiers() {
@@ -56,7 +68,7 @@ public final class CarModel implements ItemBase {
     }
 
     public void setIdentifiers(String identifiers) {
-        this.identifiers = identifiers;
+        this.identifiers = identifiers.toLowerCase();
     }
 
     @Override

@@ -3,14 +3,14 @@ package net.bobnar.marketplace.common.dtos.catalog.v1.sellers;
 import net.bobnar.marketplace.common.dtos.ItemBase;
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
-import java.util.Objects;
-
 @Schema(description = "Item containing seller information", example = """
         {
             "id": 1234,
-            "name": "Seller 1",
-            "location": "Ljubljana",
-            "contact": "info@example.com"
+            "name": "RECAR d.o.o.",
+            "location": "Tovarniška ulica 7, Celje",
+            "contact": "http://www.recar.si",
+            "source": "avtonet",
+            "sourceId": "12621"
         }
         """)
 public final class Seller implements ItemBase {
@@ -18,12 +18,18 @@ public final class Seller implements ItemBase {
     private String name;
     private String location;
     private String contact;
+    private String source;
+    private String sourceId;
 
-    public Seller(Integer id, String name, String location, String contact) {
+    private Seller() {}
+
+    public Seller(Integer id, String name, String location, String contact, String source, String sourceId) {
         this.id = id;
         this.name = name;
         this.location = location;
         this.contact = contact;
+        this.source = source;
+        this.sourceId = sourceId;
     }
 
     @Override
@@ -59,26 +65,19 @@ public final class Seller implements ItemBase {
         this.contact = contact;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Seller seller = (Seller) o;
-        return Objects.equals(id, seller.id) && Objects.equals(name, seller.name) && Objects.equals(location, seller.location) && Objects.equals(contact, seller.contact);
+    public String getSource() {
+        return source;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, location, contact);
+    public void setSource(String source) {
+        this.source = source;
     }
 
-    @Override
-    public String toString() {
-        return "Seller{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", location='" + location + '\'' +
-                ", contact='" + contact + '\'' +
-                '}';
+    public String getSourceId() {
+        return sourceId;
+    }
+
+    public void setSourceId(String sourceId) {
+        this.sourceId = sourceId;
     }
 }
