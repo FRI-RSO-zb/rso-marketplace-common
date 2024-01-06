@@ -1,0 +1,34 @@
+syntax = "proto3";
+option java_package = "net.bobnar.marketplace.common.grpc.catalog";
+
+service CarModels {
+    rpc findModelByIdentifiers(FindModelByIdentifierRequest) returns (FindModelByIdentifierResponse) {};
+    rpc findMultipleModelsByIdentifiers(FindMultipleModelsByIdentifiersRequest) returns (FindMultipleModelsByIdentifiersResponse) {};
+}
+
+message FindModelByIdentifierRequest {
+    string brandIdentifier = 1;
+    string modelIdentifier = 2;
+}
+message FindModelByIdentifierResponse {
+//    repeated FindModelResult candidates = 1;
+    FindModelResult candidate = 1;
+}
+message FindModelResult {
+    int32 id = 1;
+    FindBrandResult brand = 2;
+    string primaryIdentifier = 3;
+    repeated string identifiers = 4;
+}
+message FindBrandResult {
+    int32 id = 1;
+    string primaryIdentifier = 2;
+    repeated string identifiers = 3;
+}
+
+message FindMultipleModelsByIdentifiersRequest {
+    repeated FindModelByIdentifierRequest requests = 1;
+}
+message FindMultipleModelsByIdentifiersResponse {
+    repeated FindModelByIdentifierResponse results = 1;
+}

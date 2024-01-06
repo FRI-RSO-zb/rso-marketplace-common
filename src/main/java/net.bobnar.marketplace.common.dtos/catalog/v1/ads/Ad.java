@@ -17,15 +17,13 @@ public final class Ad implements Serializable, ItemBase {
     private String title;
     private String source;
     private Integer sellerId;
-    private Integer brandId;
     private Integer modelId;
 
-    public Ad(Integer id, String title, String source, Integer sellerId, Integer brandId, Integer modelId) {
+    public Ad(Integer id, String title, String source, Integer sellerId, Integer modelId) {
         this.id = id;
         this.title = title;
         this.source = source;
         this.sellerId = sellerId;
-        this.brandId = brandId;
         this.modelId = modelId;
     }
 
@@ -60,14 +58,6 @@ public final class Ad implements Serializable, ItemBase {
 
     public void setSellerId(Integer sellerId) {
         this.sellerId = sellerId;
-    }
-
-    public Integer getBrandId() {
-        return brandId;
-    }
-
-    public void setBrandId(Integer brandId) {
-        this.brandId = brandId;
     }
 
     public Integer getModelId() {
