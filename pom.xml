@@ -17,7 +17,10 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <grpc.version>1.18.0</grpc.version>
+        <kumuluzee.version>4.1.0</kumuluzee.version>
         <kumuluz-grpc.version>1.1.0</kumuluz-grpc.version>
+        <kumuluzee-rest.version>2.0.1</kumuluzee-rest.version>
+        <kumuluzee-rest-client.version>2.0.0</kumuluzee-rest-client.version>
     </properties>
 
     <!-- Solution information -->
@@ -51,35 +54,31 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
+            <groupId>com.kumuluz.ee</groupId>
+            <artifactId>kumuluzee-json-p-jsonp</artifactId>
+            <version>${kumuluzee.version}</version>
+        </dependency>
+        <dependency>
             <groupId>com.kumuluz.ee.grpc</groupId>
             <artifactId>kumuluzee-grpc</artifactId>
             <version>${kumuluz-grpc.version}</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/com.google.protobuf/protobuf-java -->
-<!--        <dependency>-->
-<!--            <groupId>com.google.protobuf</groupId>-->
-<!--            <artifactId>protobuf-java</artifactId>-->
-<!--            <version>3.25.1</version>-->
-<!--        </dependency>-->
-<!--        &lt;!&ndash; https://mvnrepository.com/artifact/io.grpc/grpc-stub &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>io.grpc</groupId>-->
-<!--            <artifactId>grpc-stub</artifactId>-->
-<!--            <version>1.60.0</version>-->
-<!--        </dependency>-->
-<!--        &lt;!&ndash; https://mvnrepository.com/artifact/io.grpc/grpc-protobuf &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>io.grpc</groupId>-->
-<!--            <artifactId>grpc-protobuf</artifactId>-->
-<!--            <version>1.60.0</version>-->
-<!--        </dependency>-->
-<!--        &lt;!&ndash; https://mvnrepository.com/artifact/jakarta.annotation/jakarta.annotation-api &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>jakarta.annotation</groupId>-->
-<!--            <artifactId>jakarta.annotation-api</artifactId>-->
-<!--            <version>3.0.0-M1</version>-->
-<!--        </dependency>-->
-
+        <dependency>
+            <groupId>com.kumuluz.ee.rest</groupId>
+            <artifactId>kumuluzee-rest-core</artifactId>
+            <version>${kumuluzee-rest.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.kumuluz.ee.rest-client</groupId>
+            <artifactId>kumuluzee-rest-client</artifactId>
+            <version>${kumuluzee-rest-client.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.enterprise</groupId>
+            <artifactId>jakarta.enterprise.cdi-api</artifactId>
+            <version>2.0.2</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
     <build>
