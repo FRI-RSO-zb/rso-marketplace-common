@@ -5,9 +5,13 @@ service CarModels {
     rpc getBrands(BrandsRequest) returns (BrandsResponse) {};
     rpc getModels(ModelsRequest) returns (ModelsResponse) {};
 
+    rpc resolveBrand(BrandResolveRequest) returns (BrandResolveResponse) {};
+    rpc resolveModel(ModelResolveRequest) returns (ModelResolveResponse) {};
+
     rpc findModelByIdentifiers(FindModelByIdentifierRequest) returns (FindModelByIdentifierResponse) {};
     rpc findMultipleModelsByIdentifiers(FindMultipleModelsByIdentifiersRequest) returns (FindMultipleModelsByIdentifiersResponse) {};
 }
+
 
 message BrandsRequest {
     repeated int32 ids = 1;
@@ -23,9 +27,14 @@ message CarBrand {
     repeated string identifiers = 4;
 }
 
+
 message ModelsRequest {
     repeated int32 ids = 1;
-    repeated string identifiers = 2;
+    repeated ModelsByIdentifierRequest identifiers = 2;
+}
+message ModelsByIdentifierRequest {
+    int32 brandId = 1;
+    string identifier = 2;
 }
 message ModelsResponse {
     repeated CarModel items = 1;
@@ -35,8 +44,28 @@ message CarModel {
     string name = 2;
     int32 brandId = 3;
     string primaryIdentifier = 4;
-    string identifiers = 5;
+    repeated string identifiers = 5;
 }
+
+
+message BrandResolveRequest {
+    string brand = 1;
+    string title = 2;
+}
+message BrandResolveResponse {
+    CarBrand resolvedBrand = 1;
+}
+
+
+message ModelResolveRequest {
+    string brandPrimaryIdentifier = 1;
+    string model = 2;
+    string title = 3;
+}
+message ModelResolveResponse {
+    CarModel resolvedModel = 1;
+}
+
 
 message FindModelByIdentifierRequest {
     string brandIdentifier = 1;
@@ -56,6 +85,7 @@ message FindBrandResult {
     string primaryIdentifier = 2;
     repeated string identifiers = 3;
 }
+
 
 message FindMultipleModelsByIdentifiersRequest {
     repeated FindModelByIdentifierRequest requests = 1;
